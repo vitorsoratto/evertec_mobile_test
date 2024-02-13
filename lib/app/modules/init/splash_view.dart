@@ -1,7 +1,9 @@
 import 'dart:async';
 import 'dart:math';
 
+import 'package:evertec_mobile_test/app/shared/components/covid_logo.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
@@ -24,7 +26,7 @@ class _SplashViewState extends State<SplashView> {
     Timer.periodic(const Duration(seconds: 1), (Timer timer) {
       setState(() {
         if (progressValue < 1.0) {
-          double controlledRandomValue = rng.nextDouble() / 5;
+          double controlledRandomValue = rng.nextDouble();
 
           if (progressValue + controlledRandomValue < 1.0) {
             progressValue += controlledRandomValue;
@@ -43,16 +45,10 @@ class _SplashViewState extends State<SplashView> {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Expanded(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Image.asset('assets/images/covid.png', width: 200, height: 200),
-              const Text('COVID-19',
-                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.w900)),
-              const Text('CORONAVIRUS 2019 - nCoV',
-                  style: TextStyle(fontSize: 10, fontWeight: FontWeight.w900)),
-            ],
+        const Expanded(
+          child: CovidLogo(
+            width: 200,
+            height: 200,
           ),
         ),
         Padding(
