@@ -7,8 +7,13 @@ class AppThemes {
     brightness: Brightness.light,
     scaffoldBackgroundColor: Colors.white,
     appBarTheme: const AppBarTheme(
-      backgroundColor: Colors.white,
-      elevation: 0,
+      backgroundColor: AppColors.lightGray,
+      elevation: 2,
+      titleTextStyle: TextStyle(
+        color: Colors.black,
+        fontSize: 20,
+        fontWeight: FontWeight.w600,
+      ),
       iconTheme: IconThemeData(
         color: Colors.black,
       ),
@@ -20,10 +25,12 @@ class AppThemes {
     brightness: Brightness.dark,
     scaffoldBackgroundColor: AppColors.darkGray,
     appBarTheme: const AppBarTheme(
-      backgroundColor: AppColors.darkGray,
-      elevation: 0,
-      iconTheme: IconThemeData(
-        color: AppColors.darkOrange,
+      backgroundColor: AppColors.darkOrange,
+      elevation: 2,
+      titleTextStyle: TextStyle(
+        color: Colors.white,
+        fontSize: 20,
+        fontWeight: FontWeight.w600,
       ),
     ),
   );
