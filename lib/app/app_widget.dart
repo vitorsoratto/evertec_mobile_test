@@ -27,6 +27,7 @@ class _AppWidgetState extends State<AppWidget> {
             darkTheme: AppThemes.darkTheme,
             themeMode: state.themeMode,
             routerConfig: Modular.routerConfig,
+            debugShowCheckedModeBanner: false,
             builder: (context, child) {
               return Material(child: child ?? Container());
             },

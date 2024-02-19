@@ -28,3 +28,7 @@ flutter:
   assets:
     - assets/images/covid.png
     - assets/images/home-image.png
+    - assets/images/login-image.png
+    - assets/images/google-logo.png
+    - assets/images/facebook-logo.png
+    - assets/images/instagram-logo.png

@@ -74,6 +74,7 @@ class _DeviceInfoWidgetState extends State<DeviceInfoWidget> {
         deviceInfo = _readIosDeviceInfo(await deviceInfoPlugin.iosInfo);
       }
     } catch (e) {}
+
     if (!mounted) return;
 
     setState(() {
