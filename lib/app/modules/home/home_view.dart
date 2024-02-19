@@ -80,11 +80,11 @@ Widget homeImage() {
 }
 
 Widget customAppBar() {
-  return const Row(
+  return Row(
     mainAxisAlignment: MainAxisAlignment.spaceBetween,
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
-      Padding(
+      const Padding(
         padding: EdgeInsets.only(left: 20, top: 16),
         child: CovidLogo(
           width: 100,
@@ -94,11 +94,16 @@ Widget customAppBar() {
           mainAxisAlignment: MainAxisAlignment.start,
         ),
       ),
-      Padding(
-        padding: EdgeInsets.only(top: 28, right: 28),
-        child: Icon(
-          Icons.logout,
-          size: 32,
+      GestureDetector(
+        onTap: () {
+          Modular.to.navigate('/login/');
+        },
+        child: const Padding(
+          padding: EdgeInsets.only(top: 28, right: 28),
+          child: Icon(
+            Icons.logout,
+            size: 32,
+          ),
         ),
       ),
     ],
