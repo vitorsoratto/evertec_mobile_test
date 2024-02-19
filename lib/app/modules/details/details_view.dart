@@ -1,5 +1,6 @@
 import 'package:evertec_mobile_test/app/modules/details/bloc/details_bloc.dart';
 import 'package:evertec_mobile_test/app/modules/details/models/state_current.dart';
+import 'package:evertec_mobile_test/app/modules/details/models/state_detail.dart';
 import 'package:evertec_mobile_test/app/modules/details/models/state_info.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -139,12 +140,25 @@ class _DetailsViewState extends State<DetailsView> {
             ),
             Expanded(
               flex: 1,
-              child: Container(
-                  padding: const EdgeInsets.all(8),
-                  child: const Icon(
-                    Icons.keyboard_arrow_right,
-                    size: 32,
-                  )),
+              child: GestureDetector(
+                onTap: () {
+                  StateDetailModel stateDetailModel = StateDetailModel(
+                    state: stateInfoModel.state,
+                    stateCurrent: stateCurrentModel,
+                    stateInfo: stateInfoModel,
+                  );
+                  Modular.to.pushNamed(
+                    '/details/state/',
+                    arguments: stateDetailModel,
+                  );
+                },
+                child: Container(
+                    padding: const EdgeInsets.all(8),
+                    child: const Icon(
+                      Icons.keyboard_arrow_right,
+                      size: 32,
+                    )),
+              ),
             ),
           ],
         ));

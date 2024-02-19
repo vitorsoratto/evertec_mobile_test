@@ -2,6 +2,7 @@ class StateCurrentModel {
   int? date;
   String? state;
   int? positive;
+  int? negative;
   String? totalTestResultsSource;
   int? totalTestResults;
   int? hospitalizedCurrently;
@@ -31,40 +32,44 @@ class StateCurrentModel {
   int? positiveScore;
   int? score;
   String? grade;
+  int? recovered;
 
-  StateCurrentModel(
-      {this.date,
-      this.state,
-      this.positive,
-      this.totalTestResultsSource,
-      this.totalTestResults,
-      this.hospitalizedCurrently,
-      this.hospitalizedCumulative,
-      this.onVentilatorCurrently,
-      this.lastUpdateEt,
-      this.dateModified,
-      this.checkTimeEt,
-      this.death,
-      this.hospitalized,
-      this.dateChecked,
-      this.totalTestsViral,
-      this.positiveTestsViral,
-      this.negativeTestsViral,
-      this.fips,
-      this.positiveIncrease,
-      this.negativeIncrease,
-      this.total,
-      this.totalTestResultsIncrease,
-      this.posNeg,
-      this.deathIncrease,
-      this.hospitalizedIncrease,
-      this.hash,
-      this.commercialScore,
-      this.negativeRegularScore,
-      this.negativeScore,
-      this.positiveScore,
-      this.score,
-      this.grade});
+  StateCurrentModel({
+    this.date,
+    this.state,
+    this.positive,
+    this.totalTestResultsSource,
+    this.totalTestResults,
+    this.hospitalizedCurrently,
+    this.hospitalizedCumulative,
+    this.onVentilatorCurrently,
+    this.lastUpdateEt,
+    this.dateModified,
+    this.checkTimeEt,
+    this.death,
+    this.hospitalized,
+    this.dateChecked,
+    this.totalTestsViral,
+    this.positiveTestsViral,
+    this.negativeTestsViral,
+    this.fips,
+    this.positiveIncrease,
+    this.negativeIncrease,
+    this.total,
+    this.totalTestResultsIncrease,
+    this.posNeg,
+    this.deathIncrease,
+    this.hospitalizedIncrease,
+    this.hash,
+    this.commercialScore,
+    this.negativeRegularScore,
+    this.negativeScore,
+    this.positiveScore,
+    this.score,
+    this.grade,
+    this.negative,
+    this.recovered,
+  });
 
   StateCurrentModel.fromJson(Map<String, dynamic> json) {
     date = json['date'];
@@ -99,6 +104,8 @@ class StateCurrentModel {
     positiveScore = json['positiveScore'];
     score = json['score'];
     grade = json['grade'];
+    negative = json['negative'];
+    recovered = json['recovered'];
   }
 
   Map<String, dynamic> toJson() {
@@ -135,6 +142,8 @@ class StateCurrentModel {
     data['positiveScore'] = positiveScore;
     data['score'] = score;
     data['grade'] = grade;
+    data['negative'] = negative;
+    data['recovered'] = recovered;
     return data;
   }
 }
