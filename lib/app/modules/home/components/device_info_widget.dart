@@ -69,14 +69,11 @@ class _DeviceInfoWidgetState extends State<DeviceInfoWidget> {
 
     try {
       if (defaultTargetPlatform == TargetPlatform.android) {
-        print('Android');
         deviceInfo = _readAndroidBuildData(await deviceInfoPlugin.androidInfo);
       } else {
         deviceInfo = _readIosDeviceInfo(await deviceInfoPlugin.iosInfo);
       }
-    } catch (e) {
-      print(e);
-    }
+    } catch (e) {}
     if (!mounted) return;
 
     setState(() {
@@ -85,8 +82,6 @@ class _DeviceInfoWidgetState extends State<DeviceInfoWidget> {
   }
 
   DeviceInfo _readAndroidBuildData(AndroidDeviceInfo build) {
-    print('negoço: ' + (build.version.baseOS ?? '').toString());
-
     return DeviceInfo(
       name: build.device,
       brand: build.brand,
