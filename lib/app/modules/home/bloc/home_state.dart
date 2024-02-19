@@ -1,20 +1,21 @@
 part of 'home_bloc.dart';
 
-final class HomeState extends Equatable {
-  final DeviceInfoPlugin deviceInfoPlugin;
-
-  const HomeState({
-    required this.deviceInfoPlugin,
-  });
-
-  HomeState copyWith({
-    required DeviceInfoPlugin deviceInfoPlugin,
-  }) {
-    return HomeState(
-      deviceInfoPlugin: deviceInfoPlugin,
-    );
-  }
+abstract class HomeState extends Equatable {
+  const HomeState();
 
   @override
-  List<Object> get props => [deviceInfoPlugin];
+  List<Object?> get props => [];
 }
+
+class HomeInitial extends HomeState {}
+
+class HomeSuccess extends HomeState {
+  final CurrentModel currentModel;
+
+  const HomeSuccess({required this.currentModel});
+
+  @override
+  List<Object> get props => [currentModel];
+}
+
+class HomeFailed extends HomeState {}

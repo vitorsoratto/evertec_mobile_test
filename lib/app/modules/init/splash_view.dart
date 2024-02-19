@@ -35,7 +35,7 @@ class _SplashViewState extends State<SplashView> {
           }
         } else {
           timer.cancel();
-          Modular.to.navigate('/login/');
+          Modular.to.navigate('/home/');
         }
       });
     });

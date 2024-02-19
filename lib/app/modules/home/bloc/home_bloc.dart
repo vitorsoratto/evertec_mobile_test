@@ -1,19 +1,28 @@
 import 'package:bloc/bloc.dart';
-import 'package:device_info_plus/device_info_plus.dart';
 import 'package:equatable/equatable.dart';
-import 'package:flutter/material.dart';
+import 'package:evertec_mobile_test/app/modules/home/models/current_model.dart';
+import 'package:evertec_mobile_test/app/modules/home/repository/home_repository.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 part 'home_event.dart';
 part 'home_state.dart';
 
-class HomeBloc extends Bloc<AppEvent, HomeState> {
-  HomeBloc() : super(HomeState(deviceInfoPlugin: DeviceInfoPlugin())) {
-    on<AppThemeChange>(_onChangeTheme);
+class HomeBloc extends Bloc<HomeEvent, HomeState> {
+  HomeBloc() : super(HomeInitial()) {
+    on<Current>(_onCurrent);
   }
 
-  void _onChangeTheme(AppThemeChange event, Emitter<HomeState> emit) {
-    DeviceInfoPlugin deviceInfoPlugin = DeviceInfoPlugin();
+  void _onCurrent(Current event, Emitter<HomeState> emit) async {
+    CurrentModel? currentModel;
 
-    emit(state.copyWith(deviceInfoPlugin: deviceInfoPlugin));
+    HomeRepository homeRepository = Modular.get<HomeRepository>();
+
+    currentModel = await homeRepository.getCurrentData();
+
+    if (currentModel != null) {
+      emit(HomeSuccess(currentModel: currentModel));
+    } else {
+      emit(HomeFailed());
+    }
   }
 }
