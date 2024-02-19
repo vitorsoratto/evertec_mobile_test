@@ -5,6 +5,7 @@ class CovidLogo extends StatelessWidget {
   final double height;
   final double titleFontSize;
   final double subTitleFontSize;
+  final MainAxisAlignment mainAxisAlignment;
 
   const CovidLogo({
     super.key,
@@ -12,20 +13,31 @@ class CovidLogo extends StatelessWidget {
     required this.height,
     this.titleFontSize = 22,
     this.subTitleFontSize = 10,
+    this.mainAxisAlignment = MainAxisAlignment.center,
   });
 
   @override
   Widget build(BuildContext context) {
+    ThemeData theme = Theme.of(context);
+
     return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisAlignment: mainAxisAlignment,
       children: [
         Image.asset('assets/images/covid.png', width: width, height: height),
-        Text('COVID-19',
-            style: TextStyle(
-                fontSize: titleFontSize, fontWeight: FontWeight.w900)),
-        Text('CORONAVIRUS 2019 - nCoV',
-            style: TextStyle(
-                fontSize: subTitleFontSize, fontWeight: FontWeight.w900)),
+        Text(
+          'COVID-19',
+          style: theme.textTheme.bodyLarge?.copyWith(
+            fontSize: titleFontSize,
+            fontWeight: FontWeight.w900,
+          ),
+        ),
+        Text(
+          'CORONAVIRUS 2019 - nCoV',
+          style: theme.textTheme.bodyLarge?.copyWith(
+            fontSize: subTitleFontSize,
+            fontWeight: FontWeight.w900,
+          ),
+        ),
       ],
     );
   }
