@@ -74,6 +74,17 @@ class _InfoPanelWidgetState extends State<InfoPanelWidget> {
                 return infoPanelData(theme, state.themeMode);
               },
             ),
+            Container(
+              padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 4),
+              alignment: Alignment.centerLeft,
+              child: Text(
+                'El proyecto COVID Tracking ha finalizado toda recopilación de datos a partir del 7 de marzo de 2021',
+                style: theme.textTheme.bodySmall?.copyWith(
+                  color: AppColors.darkGray,
+                  fontSize: 12,
+                ),
+              ),
+            ),
           ],
         ),
       ),
