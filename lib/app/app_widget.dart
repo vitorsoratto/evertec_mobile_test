@@ -22,7 +22,7 @@ class _AppWidgetState extends State<AppWidget> {
       child: BlocBuilder<AppBloc, AppState>(
         builder: (context, state) {
           return MaterialApp.router(
-            title: 'Evertec Mobile Test',
+            title: 'Evertec Covid Monitor',
             theme: AppThemes.lightTheme,
             darkTheme: AppThemes.darkTheme,
             themeMode: state.themeMode,
