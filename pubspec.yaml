@@ -34,3 +34,56 @@ flutter:
     - assets/images/instagram-logo.png
 
     - assets/credentials/credentials.json
+
+    - assets/images/states/alabama.png
+    - assets/images/states/alaska.png
+    - assets/images/states/arizona.png
+    - assets/images/states/arkansas.png
+    - assets/images/states/california.png
+    - assets/images/states/colorado.png
+    - assets/images/states/connecticut.png
+    - assets/images/states/delaware.png
+    - assets/images/states/florida.png
+    - assets/images/states/georgia.png
+    - assets/images/states/hawaii.png
+    - assets/images/states/hampshire.png
+    - assets/images/states/idaho.png
+    - assets/images/states/illinois.png
+    - assets/images/states/indiana.png
+    - assets/images/states/iowa.png
+    - assets/images/states/kansas.png
+    - assets/images/states/kentucky.png
+    - assets/images/states/louisiana.png
+    - assets/images/states/maine.png
+    - assets/images/states/maryland.png
+    - assets/images/states/massachusetts.png
+    - assets/images/states/michigan.png
+    - assets/images/states/minnesota.png
+    - assets/images/states/mississippi.png
+    - assets/images/states/missouri.png
+    - assets/images/states/montana.png
+    - assets/images/states/nebraska.png
+    - assets/images/states/nevada.png
+    - assets/images/states/new_jersey.png
+    - assets/images/states/new_mexico.png
+    - assets/images/states/new_york.png
+    - assets/images/states/new_hampshire.png
+    - assets/images/states/north_carolina.png
+    - assets/images/states/north_dakota.png
+    - assets/images/states/ohio.png
+    - assets/images/states/oklahoma.png
+    - assets/images/states/oregon.png
+    - assets/images/states/pennsylvania.png
+    - assets/images/states/rhode_island.png
+    - assets/images/states/south_carolina.png
+    - assets/images/states/south_dakota.png
+    - assets/images/states/tennessee.png
+    - assets/images/states/texas.png
+    - assets/images/states/utah.png
+    - assets/images/states/vermont.png
+    - assets/images/states/virginia.png
+    - assets/images/states/washington.png
+    - assets/images/states/west_virginia.png
+    - assets/images/states/wisconsin.png
+    - assets/images/states/wyoming.png
+    - assets/images/states/usa.png

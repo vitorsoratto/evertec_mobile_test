@@ -2,6 +2,7 @@ import 'package:evertec_mobile_test/app/modules/details/bloc/details_bloc.dart';
 import 'package:evertec_mobile_test/app/modules/details/models/state_current.dart';
 import 'package:evertec_mobile_test/app/modules/details/models/state_detail.dart';
 import 'package:evertec_mobile_test/app/modules/details/models/state_info.dart';
+import 'package:evertec_mobile_test/app/shared/utils/state_flag_parser.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -16,6 +17,7 @@ class DetailsView extends StatefulWidget {
 
 class _DetailsViewState extends State<DetailsView> {
   final detailsBloc = Modular.get<DetailsBloc>();
+  StateFlagParser stateFlagParser = StateFlagParser();
 
   @override
   void initState() {
@@ -92,9 +94,11 @@ class _DetailsViewState extends State<DetailsView> {
               flex: 1,
               child: Container(
                   padding: const EdgeInsets.all(8),
-                  child: const Icon(
-                    Icons.location_on,
-                    size: 32,
+                  child: CircleAvatar(
+                    backgroundImage: AssetImage(
+                      stateFlagParser
+                          .stateFlagParser(stateInfoModel.state ?? ''),
+                    ),
                   )),
             ),
             Expanded(
